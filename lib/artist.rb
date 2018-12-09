@@ -28,9 +28,10 @@ class Artist
         #binding.pry
         end
       else
-        new_song = self.new(name)
-        new_song
         #binding.pry
+        name = self.new(name)
+        name.save
+      
       end 
   end 
   
