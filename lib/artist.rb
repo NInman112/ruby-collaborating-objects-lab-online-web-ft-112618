@@ -23,15 +23,20 @@ class Artist
   end 
   
   def self.find_or_create_by_name(name)
-      if self.all.find do |data| 
-        data.name == name 
-        #binding.pry
-        end
-      else
-        new_song = self.new(name)
-        new_song
-        #binding.pry
-      end 
+    if @@all.map {|a| a.name }.include?(name)
+      @@all.find {|a| a.name == name}
+    else
+      artist = self.new(name)
+      artist.save[-1]
+    end
+    
+      # if self.all.find do |data| 
+      #   data.name == name 
+      #   #binding.pry
+      #   end
+      # else
+      #   name = self.new(name)
+      # end 
   end 
   
   def print_songs
