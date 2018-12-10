@@ -18,11 +18,18 @@ class Song
     parsed = file_name.split(" - ")
     song = self.new(parsed[1])
     artist = parsed[0]
+<<<<<<< HEAD
     song.artist = Artist.find_or_create_by_name(artist)
     song.artist.add_song(song)
     
     #song.artist_name = artist                           #added by lesson help
     
+=======
+    artist = Artist.find_or_create_by_name(name)
+    
+    #song.artist_name = artist                           #added by lesson help
+    # binding.pry
+>>>>>>> 9be8975656666ccff635177099bedb730ec4a83e
     song
   end 
   
